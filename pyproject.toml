@@ -6,8 +6,34 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "mcp>=1.6.0",
-    "pydantic>=2.11.0"
+    "pydantic>=2.11.0",
+    "requests>=2.28.0",
+    "python-dotenv>=1.0.0",
+    "impyla",
+    "pandas"
 ]
+
+[dependency-groups]
+dev = [
+    "autoflake==2.3.1",
+    "debugpy==1.8.12",
+    "pytest==8.2.2",
+    "pytest-cov==5.0.0",
+    "ruff==0.11.10",
+]
+
+[tool.ruff]
+line-length = 120
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/samplemcp/__init__.py"
 
 [project.scripts]
 samplemcp = "samplemcp.__main__:main"
+testrepo = "samplemcp.__main__:testrepo"
+workbenchmcp = "samplemcp.__main__:workbenchmcp"
+hivetablemcp = "samplemcp.__main__:hivetablemcp"
