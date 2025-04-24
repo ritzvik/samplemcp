@@ -1,0 +1,13 @@
+[project]
+name = "samplemcp"
+version = "0.1.0"
+description = "MCP server with some dummpy tools"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.6.0",
+    "pydantic>=2.11.0"
+]
+
+[project.scripts]
+samplemcp = "samplemcp.__main__:main"
