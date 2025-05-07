@@ -1,3 +1,4 @@
+import os, json
 from typing import Annotated, Literal
 from pydantic import Field
 
@@ -46,6 +47,28 @@ def calculator_tool(
     else:
         raise ValueError("Invalid operator")
     return str(res)
+
+# Get configuration from environment variables
+def get_config():
+    return {
+        "host": os.environ.get("CLOUDERA_ML_HOST", ""),
+        "api_key": os.environ.get("CLOUDERA_ML_API_KEY", "")
+    }
+
+@mcp.tool()
+def list_projects_tool() -> str:
+    """
+    List all available projects.
+    
+    Returns:
+        JSON string with all project information
+    """
+    from samplemcp.workbenchmcp.functions.get_project_id import get_project_id
+    config = get_config()
+    result = get_project_id(config, {"project_name": "*"})
+    
+    # Convert result to string
+    return json.dumps(result, indent=2)
 
 
 def main():
