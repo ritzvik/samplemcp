@@ -6,7 +6,7 @@ from typing import Dict, Any, Optional, List, Union, Callable
 import json
 import os
 
-import workbenchmcp.functions as functions
+import samplemcp.workbenchmcp.functions as functions
 
 
 class ClouderaMCP:
