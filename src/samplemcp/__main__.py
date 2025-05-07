@@ -79,6 +79,10 @@ def main():
 def testrepo():
     print("Testing.... testing.... testing....")
 
+def workbenchmcp():
+    from samplemcp.workbenchmcp.server import main as workbenchmcp_main
+    print("Starting Workbench MCP server...")
+    workbenchmcp_main()
 
 if __name__ == "__main__":
     main()

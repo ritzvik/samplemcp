@@ -21,4 +21,4 @@ path = "src/samplemcp/__init__.py"
 [project.scripts]
 samplemcp = "samplemcp.__main__:main"
 testrepo = "samplemcp.__main__:testrepo"
-workbenchmcp = "samplemcp.workbenchmcp.server:main"
+workbenchmcp = "samplemcp.__main__:workbenchmcp"
