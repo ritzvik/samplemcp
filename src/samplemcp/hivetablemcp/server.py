@@ -88,7 +88,7 @@ def hive_or_impala_execute_write_sql_query(
     PASSWORD = config["password"]
 
     conn = cmldata.get_connection(CONNECTION_NAME, {"USERNAME": USERNAME, "PASSWORD": PASSWORD})
-    cursor = conn.cursor()
+    cursor = conn.get_cursor()
     try:
         cursor.execute(query)
         return "Query executed successfully"
