@@ -46,7 +46,7 @@ def hive_table_return_top_3_rows(
         ret2 = dataframe2.to_dict(orient="records")  # structured output
 
         ret = ret1 + ret2
-        return ret
+        return str(ret)
     finally:
         conn.close()
 
